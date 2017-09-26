@@ -1,4 +1,5 @@
 import { StatelessComponent } from 'react'
+import * as path from 'path'
 import * as fs from 'fs-extra'
 import { prettyPrint } from 'html'
 import { MainPage } from './components/MainPage'
@@ -24,7 +25,7 @@ export const generateDoc = async ({
         pkg,
         markdown,
     })
-    const styleDir = `${process.cwd()}/src/style`
+    const styleDir = path.resolve(__dirname, 'style')
 
     try {
         await fs.writeFile(`${outDir}/index.html`, prettyPrint(html))

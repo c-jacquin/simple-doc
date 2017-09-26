@@ -1,6 +1,7 @@
 const {
     concurrent,
-    series
+    series,
+    copy,
 } = require('nps-utils')
 
 module.exports = {
@@ -81,7 +82,8 @@ module.exports = {
             description: 'clean dist dir',
             script: series(
                 'rimraf dist -r',
-                'mkdir dist'
+                'mkdir dist',
+                copy('src/style/*.css dist/style -r')
             ),
         },
         watch: {

@@ -21,7 +21,6 @@ export const Markdown: React.StatelessComponent<MarkdownProps> = ({
     githubStyle = true,
     markdown,
 }) => {
-    console.log('markdown', markdown)
     return (
         <div
             className={githubStyle ? 'markdown-github' : ''}
