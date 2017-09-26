@@ -1,20 +1,20 @@
 import { StatelessComponent } from 'react'
-import fs from 'fs-extra'
+import * as fs from 'fs-extra'
 import { prettyPrint } from 'html'
 import { MainPage } from './components/MainPage'
 import renderPage from './render'
 
 export interface SimpleDocParams {
     pkg: any
-    changelog: string
+    markdown: string
     outDir?: string
     Page?: StatelessComponent<any>
     title?: string
 }
 
-export default async ({
+export const generateDoc = async ({
     pkg,
-    changelog,
+    markdown,
     outDir = process.cwd() + '/docs',
     Page = MainPage,
     title,
@@ -22,11 +22,19 @@ export default async ({
     const html = renderPage(Page, {
         title: title || `${pkg.name} Documentation`,
         pkg,
-        changelog,
+        markdown,
     })
     const styleDir = `${process.cwd()}/src/style`
 
-    await fs.writeFile(`${outDir}/index.html`, prettyPrint(html))
-    await fs.copy(`${styleDir}/github.css`, `${outDir}/github.css`)
-    await fs.copy(`${styleDir}/main.css`, `${outDir}/main.css`)
+    try {
+        await fs.writeFile(`${outDir}/index.html`, prettyPrint(html))
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            await fs.mkdir(outDir)
+            await fs.writeFile(`${outDir}/index.html`, prettyPrint(html))
+        }
+    } finally {
+        await fs.copy(`${styleDir}/github.css`, `${outDir}/github.css`)
+        await fs.copy(`${styleDir}/main.css`, `${outDir}/main.css`)
+    }
 }

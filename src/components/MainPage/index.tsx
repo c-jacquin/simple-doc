@@ -1,5 +1,5 @@
-import React, { StatelessComponent } from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
+import * as PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 import { Navbar } from '../Navbar'
@@ -13,7 +13,7 @@ interface MainPageProps {
     menu?: NavItemProps[]
 }
 
-export const MainPage: StatelessComponent<MainPageProps> = ({
+export const MainPage: React.StatelessComponent<MainPageProps> = ({
     markdown,
     pkg,
     title,

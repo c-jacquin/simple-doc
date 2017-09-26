@@ -1,5 +1,5 @@
-import React, { StatelessComponent } from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
+import * as PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 import { NavItem, NavItemProps } from '../NavItem'
@@ -10,7 +10,7 @@ interface NavbarProps {
     menu?: NavItemProps[]
 }
 
-export const Navbar: StatelessComponent<NavbarProps> = ({
+export const Navbar: React.StatelessComponent<NavbarProps> = ({
     repo,
     title,
     menu,

@@ -1,5 +1,5 @@
-import React, { StatelessComponent } from 'react'
-import marked from 'marked'
+import * as React from 'react'
+const marked = require('marked')
 
 marked.setOptions({
     renderer: new marked.Renderer(),
@@ -17,12 +17,15 @@ interface MarkdownProps {
     markdown: string
 }
 
-export const Markdown: StatelessComponent<MarkdownProps> = ({
+export const Markdown: React.StatelessComponent<MarkdownProps> = ({
     githubStyle = true,
     markdown,
-}) => (
-    <div
-        className={githubStyle ? 'markdown-github' : ''}
-        dangerouslySetInnerHTML={{ __html: marked(markdown) }}
-    />
-)
+}) => {
+    console.log('markdown', markdown)
+    return (
+        <div
+            className={githubStyle ? 'markdown-github' : ''}
+            dangerouslySetInnerHTML={{ __html: marked(markdown) }}
+        />
+    )
+}

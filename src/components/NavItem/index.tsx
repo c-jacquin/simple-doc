@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react'
+import * as React from 'react'
 
 export interface NavItemProps {
     url: string
@@ -6,7 +6,7 @@ export interface NavItemProps {
     icon?: string
 }
 
-export const NavItem: StatelessComponent<NavItemProps> = ({
+export const NavItem: React.StatelessComponent<NavItemProps> = ({
     url,
     label,
     icon,
