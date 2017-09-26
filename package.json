@@ -1,8 +1,8 @@
 {
-  "name": "simple-doc",
+  "name": "@chazzz/simple-doc",
   "version": "0.0.0",
   "author": "Charles Jacquin <charles.jacquin@gmail.com>",
-  "main": "dist/index.lib.js",
+  "main": "dist/index.js",
   "typings": "typings/index.d.ts",
   "repository": {
     "type": "git",

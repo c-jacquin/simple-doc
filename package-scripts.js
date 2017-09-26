@@ -43,18 +43,26 @@ module.exports = {
         description: 'lint the code, run the test and build',
         script: concurrent.nps('lint', 'lint.style', 'test', 'build'),
     },
+    publish: {
+        description: 'publish on npm',
+        script: 'npm publish . --access public'
+    },
     release: {
         default: {
             description: 'create a new tag depending on the last commits and update changelog accordingly, create a tag, generate documentation, commit and push',
             script: 'standard-version --no-verify',
         },
-        firstRelease: {
+        first: {
             description: 'first release usualy 0.0.0',
             script: 'standard-version --no-verify --first-release',
         },
         postcommit: {
             description: 'generate documentation and amend standard version commit',
-            script: 'ts-node --project _scripts_/ _scripts_/releaseHook/postcommit'
+            script: series.nps(
+                'test',
+                'build',
+                'publish'
+            )
         },
         posttag: {
             description: 'push the new release on the remote',
