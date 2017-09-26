@@ -41,11 +41,12 @@ export const Navbar: React.StatelessComponent<NavbarProps> = ({
             className="collapse navbar-collapse justify-content-between"
             id="navbarNavDropdown"
         >
-            {!!menu && (
-                <ul className="navbar-nav">
-                    {menu.map(navItemProps => <NavItem {...navItemProps} />)}
-                </ul>
-            )}
+            <ul className="navbar-nav">
+                {!!menu &&
+                    menu.map((navItemProps, index) => (
+                        <NavItem key={index} {...navItemProps} />
+                    ))}
+            </ul>
             {!!repo && (
                 <ul className="navbar-nav">
                     <NavItem url={repo} icon="github" />
