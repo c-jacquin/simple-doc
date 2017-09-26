@@ -1,11 +1,12 @@
 src
 _config_
 _scripts_
+example
 .gitignore
-.stylintrc
+.stylelintrc
 CHANGELOG.md
 jest.config.js
-packahe-scripts.js
+package-scripts.js
 README.md
 tsconfig.json
 tslint.json
