@@ -22,13 +22,14 @@ const jestConfig = {
         './_scripts_/testHook/test-setup.ts'
     ],
     testPathIgnorePatterns: [
-        '<rootDir>/build/',
+        '<rootDir>/dist/',
         '<rootDir>/node_modules/'
     ],
     transform: {
         '.(js|jsx)': '<rootDir>/node_modules/babel-jest',
         '.(ts|tsx)': '<rootDir>/node_modules/ts-jest/preprocessor.js'
-    }
+    },
+    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",    
 }
 
 if (argv.coverage) {
