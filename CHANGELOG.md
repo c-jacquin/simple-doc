@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.2"></a>
+## [0.0.2](https://github.com/charjac/simple-doc/compare/v0.0.1...v0.0.2) (2017-09-26)
+
+
+### Bug Fixes
+
+* **path:** use path.resolve for .css assets ([bf7ced2](https://github.com/charjac/simple-doc/commit/bf7ced2))
+
+
+
 <a name="0.0.1"></a>
 ## [0.0.1](https://github.com/charjac/simple-doc/compare/v0.0.0...v0.0.1) (2017-09-26)
 
