@@ -87,7 +87,6 @@
   },
   "standard-version": {
     "scripts": {
-      "postcommit": "npm start release.postcommit",
       "posttag": "npm start release.posttag"
     }
   }

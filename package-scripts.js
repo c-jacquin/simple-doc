@@ -57,14 +57,6 @@ module.exports = {
             description: 'first release usualy 0.0.0',
             script: 'standard-version --no-verify --first-release',
         },
-        postcommit: {
-            description: 'generate documentation and amend standard version commit',
-            script: series.nps(
-                'test',
-                'build',
-                'publish'
-            )
-        },
         posttag: {
             description: 'push the new release on the remote',
             script: 'ts-node --project _scripts_/ _scripts_/releaseHook/posttag'
