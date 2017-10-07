@@ -3,6 +3,7 @@ import * as path from 'path'
 import * as fs from 'fs-extra'
 import { prettyPrint } from 'html'
 import { MainPage } from './components/MainPage'
+import { NavItemProps } from './components/NavItem'
 import renderPage from './render'
 
 export interface SimpleDocParams {
@@ -11,6 +12,7 @@ export interface SimpleDocParams {
     outDir?: string
     Page?: StatelessComponent<any>
     title?: string
+    menu?: NavItemProps[]
 }
 
 export const generateDoc = async ({
@@ -19,11 +21,13 @@ export const generateDoc = async ({
     outDir = process.cwd() + '/docs',
     Page = MainPage,
     title,
+    menu,
 }: SimpleDocParams) => {
     const html = renderPage(Page, {
         title: title || `${pkg.name} Documentation`,
         pkg,
         markdown,
+        menu,
     })
     const styleDir = path.resolve(__dirname, 'style')
 
