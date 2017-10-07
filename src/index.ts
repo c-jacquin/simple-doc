@@ -24,7 +24,7 @@ export const generateDoc = async ({
     menu,
 }: SimpleDocParams) => {
     const html = renderPage(Page, {
-        title: title || `${pkg.name} Documentation`,
+        title: title || `${pkg.name} ${pkg.version} Documentation`,
         pkg,
         markdown,
         menu,
