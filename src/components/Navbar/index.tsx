@@ -10,6 +10,18 @@ interface NavbarProps {
     menu?: NavItemProps[]
 }
 
+interface NavListProps {
+    menu: NavItemProps[]
+}
+
+const NavList: React.StatelessComponent<NavListProps> = ({ menu }) => (
+    <ul className="navbar-nav">
+        {menu.map((navItemProps, index) => (
+            <NavItem key={index} {...navItemProps} />
+        ))}
+    </ul>
+)
+
 export const Navbar: React.StatelessComponent<NavbarProps> = ({
     repo,
     title,
@@ -41,12 +53,8 @@ export const Navbar: React.StatelessComponent<NavbarProps> = ({
             className="collapse navbar-collapse justify-content-between"
             id="navbarNavDropdown"
         >
-            <ul className="navbar-nav">
-                {!!menu &&
-                    menu.map((navItemProps, index) => (
-                        <NavItem key={index} {...navItemProps} />
-                    ))}
-            </ul>
+            {!!menu && <NavList menu={menu} />}
+            {!menu && <ul className="navbar-nav" />}
             {!!repo && (
                 <ul className="navbar-nav">
                     <NavItem url={repo} icon="github" />
