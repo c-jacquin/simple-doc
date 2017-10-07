@@ -61,7 +61,7 @@ module.exports = {
         posttag: {
             description: 'push the new release on the remote',
             script: series(
-                `git push --follow-tags --no-verify origin ${gitBranch.sync()}`,
+                'git push --follow-tags --no-verify origin master',
                 'npm publish . --access public'
             )
         },
