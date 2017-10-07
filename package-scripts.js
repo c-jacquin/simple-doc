@@ -3,6 +3,7 @@ const {
     series,
     copy,
 } = require('nps-utils')
+const gitBranch = require('git-branch')
 
 module.exports = {
   scripts: {
@@ -60,7 +61,7 @@ module.exports = {
         posttag: {
             description: 'push the new release on the remote',
             script: series(
-                'ts-node --project _scripts_/ _scripts_/releaseHook/posttag',
+                `git push --follow-tags --no-verify origin ${gitBranch.sync()}`,
                 'npm publish . --access public'
             )
         },

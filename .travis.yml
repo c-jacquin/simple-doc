@@ -15,8 +15,5 @@ deploy:
   api_key:
     secure: MzmQU0PwZNPBeMuAzQFv0cvVgVUSC5c2HZyDqN4L14ZHZJfUZ7ZGJJKfDFW+8kNUEIKjm5e1i7xC9bKz04GAzhgftzkNqrez/k3jCuXxFKccFpi740Khc7Q4zbeyRPcA+uJ2s8rANPZrDMtvQNw7PRsuSmqaNHjaQXD9oE17jKFZ63aIDNBiIXrSgt2FwCpLZam5ZdpLTuM0IYU3rL+OPhuCzr+ZrpdyhK0HadzUTqTyddgAMemtMwssZJqF7h4I7CQWcWFkEN9JtPs3ZHVDOzgrLngvuAol5nh3tw8/mgZTzpu4td3ksVuU4juY0utBdff1XwxbrcS9fczyRvValbF+B5w0GqTyneSykm1O2oxKQDog2pME2G/1fnLZmEc1DGlE53MafL9vRqGy21CclCbjmgMSR9turCg6cGjA5QpzSlEGHn168UGVWqyDRQsagT8U3bck/lkodvW2V+Tj6I95fa3YyrEjAr31VTxqs4byp1KqQ5n+R7eeWUlEm2dn+mtxZkNjZQQXurgi7dl+v/LmiajBBdcBm/LS16blZUPFmVMt4jpwCsTgefYISzWChyt+8bfryilcRKuL56x4uX67ftsVNDHIYJZ9O7eItUxr174Gcc072CO6ee9adbyMwsqKR/WTLw1hOOqCWhU4MQ8Myv6YWVd5v673/RS6MP0=
   on:
-    tags: false
+    tags: true
     repo: charjac/simple-doc
-branches:
-  only:
-  - master
