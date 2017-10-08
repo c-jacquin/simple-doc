@@ -84,10 +84,5 @@
       "stylelint --fix",
       "git add -A"
     ]
-  },
-  "standard-version": {
-    "scripts": {
-      "posttag": "npm start release.posttag"
-    }
   }
 }

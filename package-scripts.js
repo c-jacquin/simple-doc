@@ -57,14 +57,7 @@ module.exports = {
         first: {
             description: 'first release usualy 0.0.0',
             script: 'standard-version --no-verify --first-release',
-        },
-        posttag: {
-            description: 'push the new release on the remote',
-            script: series(
-                'git push --follow-tags --no-verify origin master',
-                'npm publish . --access public'
-            )
-        },
+        }
     },
     build: {
         default: {
