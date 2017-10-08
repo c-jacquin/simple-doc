@@ -8,9 +8,7 @@ install:
 - npm i
 script:
 - npm start validate
-- npm start release
 after_success:
-  - .travis/push.sh
   - npm publish . --access public
 deploy:
   provider: npm
