@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/charjac/simple-doc/compare/v0.0.4...v0.0.5) (2017-10-08)
+
+
+### Bug Fixes
+
+* **menu:** make menu great again ([66a8287](https://github.com/charjac/simple-doc/commit/66a8287))
+* **version:** add version to the title ([e24d5c3](https://github.com/charjac/simple-doc/commit/e24d5c3))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/charjac/simple-doc/compare/v0.0.3...v0.0.4) (2017-10-07)
 
